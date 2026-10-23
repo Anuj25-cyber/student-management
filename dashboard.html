@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>Dashboard</h2>
+<div class="stats">
+  <div class="card stat"><span class="icon">🎓</span><span>{{ total }}</span><small>Total Students</small></div>
+  <div class="card stat"><span class="icon">📚</span><span>{{ courses }}</span><small>Total Courses</small></div>
+</div>
+<h3>Recently Added Students</h3>
+<div class="table-wrap">
+<table>
+  <tr><th>Roll No</th><th>Name</th><th>Course</th><th>Semester</th></tr>
+  {% for s in students %}
+  <tr><td>{{ s.roll_no }}</td><td>{{ s.name }}</td><td>{{ s.course }}</td><td>{{ s.semester }}</td></tr>
+  {% else %}
+  <tr><td colspan="4">No students yet.</td></tr>
+  {% endfor %}
+</table>
+</div>
+{% endblock %}

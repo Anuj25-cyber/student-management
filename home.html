@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card center">
+  <h2>Welcome</h2>
+  <p>A simple application to add, view, edit, delete and search student records.</p>
+  <a class="btn" href="{{ url_for('add_student') }}">Add Student</a>
+  <a class="btn secondary" href="{{ url_for('view_students') }}">View Students</a>
+  <div class="features">
+    <div class="feature"><b>➕ Add &amp; Edit</b><p>Fill a simple form to create or update any student record.</p></div>
+    <div class="feature"><b>🔍 Search</b><p>Instantly find students by name or roll number.</p></div>
+    <div class="feature"><b>🗑️ Delete</b><p>Remove records safely with a confirmation step.</p></div>
+  </div>
+</div>
+{% endblock %}

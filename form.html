@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<div class="card form-card">
+  <h2>{{ title }}</h2>
+  <form method="post">
+    <label>Student Name <input type="text" name="name" required value="{{ student.name if student }}"></label>
+    <label>Roll Number <input type="text" name="roll_no" required value="{{ student.roll_no if student }}"></label>
+    <label>Course <input type="text" name="course" required value="{{ student.course if student }}"></label>
+    <label>Semester <input type="number" name="semester" min="1" max="12" required value="{{ student.semester if student }}"></label>
+    <label>Email <input type="email" name="email" required value="{{ student.email if student }}"></label>
+    <label>Phone Number <input type="tel" name="phone" pattern="[0-9]{10}" title="10 digit number" required value="{{ student.phone if student }}"></label>
+    <button class="btn" type="submit">Save</button>
+    <a class="btn secondary" href="{{ url_for('view_students') }}">Cancel</a>
+  </form>
+</div>
+{% endblock %}
